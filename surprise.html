@@ -3,113 +3,105 @@
 
 <head>
 
-<title>Little Surprise</title>
+<title>A Little Surprise 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-
 margin:0;
 padding:0;
-
-background:linear-gradient(#ffe6f0,#ffffff);
-
-font-family:Arial;
-
+background:linear-gradient(to bottom,#ffe6f0,#ffffff);
+font-family:'Poppins',sans-serif;
 text-align:center;
-
+overflow-y:auto;
 }
-
 
 .container{
-
-padding:50px 20px;
-
+padding:40px 20px 60px;
 animation:fade 2s;
-
 }
 
+h1{
+font-family:'Great Vibes',cursive;
+font-size:56px;
+color:#ff1493;
+text-shadow:0 0 12px pink;
+margin-bottom:15px;
+}
 
 .message{
-
-font-size:23px;
-
-color:#ff4f9a;
-
+font-family:'Poppins',sans-serif;
+font-style:italic;
+font-size:20px;
+color:#ff1493;
 line-height:1.8;
-
-font-weight:bold;
-
-margin-bottom:30px;
-
+max-width:550px;
+margin:auto;
+margin-bottom:25px;
 }
-
 
 video{
-
 width:90%;
-
 max-width:360px;
-
 border-radius:25px;
-
-box-shadow:0 8px 20px pink;
-
+box-shadow:0 8px 20px rgba(255,105,180,.4);
 }
 
-
+.footer{
+margin-top:25px;
+font-family:'Dancing Script',cursive;
+font-size:24px;
+color:#ff4f9a;
+}
 
 @keyframes fade{
-
 from{
 opacity:0;
 transform:translateY(30px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
 </style>
 
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+<h1>
+💌 Just For You...
+</h1>
 
 <div class="message">
 
-💌 A Little Surprise For You...
+A little surprise made with lots of love... 🤍✨
 
-<br><br>
-
-Sometimes the smallest gifts carry the biggest feelings.
-
-<br>
-
-This little moment was created with lots of love, hoping it brings a beautiful smile to your face. 🤍✨
+May this tiny moment bring a big smile to your face and stay in your heart forever. 💖
 
 </div>
 
+<video controls autoplay loop playsinline>
 
+<source src="surprise.mp4" type="video/mp4">
 
-<video autoplay muted loop playsinline>
-
-<source src="surprise.mp4">
+Your browser does not support the video tag.
 
 </video>
 
+<div class="footer">
+
+Made with endless love, just for you. 🤍💌
 
 </div>
 
+</div>
 
 </body>
 
