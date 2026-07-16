@@ -43,17 +43,31 @@ margin-bottom:25px;
 }
 
 input{
-width:90%;
+width:100%;
 padding:12px;
-margin:10px 0;
 border:2px solid pink;
 border-radius:30px;
 outline:none;
 font-size:16px;
+box-sizing:border-box;
+margin-bottom:15px;
+}
+
+.password-box{
+position:relative;
+}
+
+.password-box span{
+position:absolute;
+right:15px;
+top:35%;
+cursor:pointer;
+font-size:20px;
+user-select:none;
 }
 
 button{
-margin-top:20px;
+margin-top:10px;
 padding:12px 35px;
 border:none;
 border-radius:30px;
@@ -85,11 +99,25 @@ font-size:15px;
 
 <p>Only someone special can unlock this surprise. 🤍</p>
 
-<input type="text" id="user" placeholder="Username">
+<input
+type="text"
+id="user"
+placeholder="Username">
 
-<input type="password" id="pass" placeholder="Password">
+<div class="password-box">
 
-<button onclick="login()">Unlock My Surprise 🎁</button>
+<input
+type="password"
+id="pass"
+placeholder="Password">
+
+<span onclick="togglePassword()">👁️</span>
+
+</div>
+
+<button onclick="login()">
+Unlock My Surprise 🎁
+</button>
 
 <div id="error"></div>
 
@@ -98,9 +126,10 @@ font-size:15px;
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 import {
-  getAuth,
-  signInWithEmailAndPassword
+getAuth,
+signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
@@ -115,42 +144,61 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Replace these with the email addresses you created in Firebase
 const users = {
-  Thiru: "thiru@319gmail.com",
-  Mani: "mani0213@gmail.com"
+  thiru: "thiru@319gmail.com",
+  mani: "mani0213@gmail.com"
 };
+
+window.togglePassword = function(){
+
+const pass = document.getElementById("pass");
+
+if(pass.type==="password"){
+pass.type="text";
+}else{
+pass.type="password";
+}
+
+}
 
 window.login = async function () {
 
-  const username = document.getElementById("user").value.trim().toLowerCase();
-  const password = document.getElementById("pass").value;
-  const error = document.getElementById("error");
+const username = document.getElementById("user").value.trim().toLowerCase();
 
-  error.innerHTML = "";
+const password = document.getElementById("pass").value;
 
-  const email = users[username];
+const error = document.getElementById("error");
 
-  if (!email) {
-    error.innerHTML = "❌ Invalid username.";
-    return;
-  }
+error.innerHTML = "";
 
-  try {
+const email = users[username];
 
-    await signInWithEmailAndPassword(auth, email, password);
+if (!email) {
 
-    window.location.href = "home.html";
+error.innerHTML = "❌ Invalid username.";
 
-  } catch (err) {
+return;
 
-    error.innerHTML = "❌ Incorrect password.";
+}
 
-  }
+try {
+
+await signInWithEmailAndPassword(auth, email, password);
+
+window.location.href = "home.html";
+
+}
+
+catch (err) {
+
+error.innerHTML = "❌ Incorrect password.";
+
+}
 
 };
 
 </script>
 
 </body>
+
 </html>
