@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Unlock My Surprise 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(#ffe6f0,#ffffff);
+font-family:'Poppins',sans-serif;
+}
+
+.box{
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 8px 25px rgba(255,105,180,.35);
+text-align:center;
+width:320px;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+color:#ff1493;
+font-size:48px;
+margin-bottom:10px;
+}
+
+p{
+color:#ff69b4;
+font-style:italic;
+margin-bottom:25px;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border:2px solid pink;
+border-radius:30px;
+outline:none;
+font-size:16px;
+}
+
+button{
+margin-top:20px;
+padding:12px 35px;
+border:none;
+border-radius:30px;
+background:#ff1493;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4f9a;
+}
+
+#error{
+margin-top:15px;
+color:red;
+font-size:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💌 Welcome</h1>
+
+<p>Only someone special can unlock this surprise. 🤍</p>
+
+<input type="text" id="user" placeholder="Username">
+
+<input type="password" id="pass" placeholder="Password">
+
+<button onclick="login()">Unlock My Surprise 🎁</button>
+
+<div id="error"></div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDHOw13_x77BlDOzgzgU-x7ySt1sw5UNyA",
+  authDomain: "birthday-surprise-c56b0.firebaseapp.com",
+  projectId: "birthday-surprise-c56b0",
+  storageBucket: "birthday-surprise-c56b0.firebasestorage.app",
+  messagingSenderId: "790379879535",
+  appId: "1:790379879535:web:8e12c64b4ecaf0c7c0019a"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Replace these with the email addresses you created in Firebase
+const users = {
+  Thiru: "thiru@319gmail.com",
+  Mani: "mani0213@gmail.com"
+};
+
+window.login = async function () {
+
+  const username = document.getElementById("user").value.trim().toLowerCase();
+  const password = document.getElementById("pass").value;
+  const error = document.getElementById("error");
+
+  error.innerHTML = "";
+
+  const email = users[username];
+
+  if (!email) {
+    error.innerHTML = "❌ Invalid username.";
+    return;
+  }
+
+  try {
+
+    await signInWithEmailAndPassword(auth, email, password);
+
+    window.location.href = "home.html";
+
+  } catch (err) {
+
+    error.innerHTML = "❌ Incorrect password.";
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
