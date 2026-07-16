@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Beautiful Memory</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:linear-gradient(#ffe6f0,#ffffff);
+font-family:Arial,sans-serif;
+text-align:center;
+overflow-y:auto;
+}
+
+
+.container{
+padding:40px 20px 120px;
+animation:fade 2s;
+}
+
+
+h1{
+
+color:#ff1493;
+font-size:42px;
+
+}
+
+
+.photo{
+
+width:90%;
+max-width:340px;
+
+border-radius:25px;
+
+box-shadow:0 8px 20px pink;
+
+margin-top:20px;
+
+}
+
+
+.message{
+
+font-size:20px;
+
+color:#ff1493;
+
+line-height:1.8;
+
+padding:20px;
+
+}
+
+
+.envelope{
+
+position:fixed;
+
+right:20px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+background:#ff4f9a;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+color:white;
+
+animation:float 2s infinite alternate;
+
+}
+
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+@keyframes float{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-10px);
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+📸 A Beautiful Memory Frozen In Time 🤍
+</h1>
+
+
+<img src="photo1.jpg" class="photo">
+
+
+<div class="message">
+
+Some moments become special because of the people in them. 💖
+
+<br><br>
+
+This picture is not just a photo, it is a beautiful memory that will always stay close to my heart. ✨
+
+</div>
+
+
+</div>
+
+
+<a href="songmemory.html" class="envelope">
+
+💌
+
+</a>
+
+
+</body>
+
+</html>

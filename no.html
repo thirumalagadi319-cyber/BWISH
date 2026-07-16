@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Sad Penguin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+
+<style>
+
+body{
+
+margin:0;
+padding:0;
+
+background:linear-gradient(#ffe6f0,#ffffff);
+
+font-family:'Poppins',sans-serif;
+
+text-align:center;
+
+}
+
+
+.container{
+
+padding:50px 20px;
+
+animation:fade 2s;
+
+}
+
+
+/* Heading */
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:55px;
+
+color:#ff4f9a;
+
+text-shadow:0 0 15px pink;
+
+}
+
+
+/* Small crying penguin */
+
+.cryvideo{
+
+width:120px;
+
+height:auto;
+
+border-radius:20px;
+
+margin-top:20px;
+
+box-shadow:0 8px 20px pink;
+
+}
+
+
+/* Message */
+
+.sad{
+
+font-family:'Dancing Script',cursive;
+
+font-size:35px;
+
+color:#ff1493;
+
+line-height:1.6;
+
+}
+
+
+/* Button */
+
+button{
+
+font-family:'Dancing Script',cursive;
+
+font-size:28px;
+
+padding:12px 35px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ff4f9a;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px pink;
+
+margin-top:20px;
+
+}
+
+
+/* Animation */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+You Said No 💔
+</h1>
+
+
+<video class="cryvideo" autoplay loop muted playsinline>
+
+<source src="cryingpenguin.mp4" type="video/mp4">
+
+</video>
+
+
+
+<h2 class="sad">
+
+Aww... the little penguin is sad 🥺
+
+<br>
+
+Please try again 💖
+
+</h2>
+
+
+
+<button onclick="location.href='index.html'">
+
+Try Again 💕
+
+</button>
+
+
+</div>
+
+
+</body>
+
+</html>
